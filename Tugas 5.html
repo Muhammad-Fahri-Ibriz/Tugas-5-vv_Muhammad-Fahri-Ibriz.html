@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CV Muhammad Fahri Ibriz</title>
+
+<style>
+
+/* =========================
+   1. GLOBAL STYLE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080D19;
+    color: white;
+    line-height: 1.7;
+}
+
+:root {
+    --dark: #080D19;
+    --navy: #102D65;
+    --blue: #2785F5;
+    --cyan: #42D9FF;
+    --white: #FFFFFF;
+    --gray: #B9C5D8;
+}
+
+/* =========================
+   2. ANIMATION
+========================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes neon {
+    0%, 100% {
+        text-shadow: 0 0 8px var(--blue);
+    }
+    50% {
+        text-shadow:
+            0 0 15px var(--blue),
+            0 0 30px var(--cyan);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* =========================
+   3. NAVBAR
+========================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #0C1425;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #1C3659;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--cyan);
+    animation: floating 3s infinite;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan);
+}
+
+/* =========================
+   4. HERO / LANDING PAGE
+========================= */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 80px 10%;
+
+    background: linear-gradient(
+        -45deg,
+        #080D19,
+        #102D65,
+        #1266C5,
+        #080D19
+    );
+
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
+
+.hero-content {
+    max-width: 700px;
+    animation: slideUp 1.2s ease;
+}
+
+.hero h3 {
+    color: var(--cyan);
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+    animation: neon 2s infinite;
+}
+
+.hero p {
+    color: #D1DDF0;
+    margin: 20px 0;
+}
+
+/* FOTO PROFIL */
+
+.profile-photo {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--cyan)
+    );
+    border: 5px solid var(--cyan);
+    box-shadow: 0 0 35px #2785F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    font-weight: bold;
+    animation: floating 4s infinite;
+    flex-shrink: 0;
+}
+
+/* =========================
+   5. BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 5px 5px 5px 0;
+    transition: .3s;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: var(--cyan);
+    color: var(--dark);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 20px var(--cyan);
+}
+
+/* =========================
+   6. SECTION
+========================= */
+
+section {
+    padding: 75px 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    color: var(--cyan);
+    margin-bottom: 35px;
+}
+
+/* =========================
+   7. CARD
+========================= */
+
+.card {
+    background: #111C30;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #233B60;
+    margin-bottom: 20px;
+    transition: .4s;
+    animation: fadeIn 1s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--cyan);
+    box-shadow: 0 10px 30px #2785F555;
+}
+
+.card h3 {
+    color: #83B9FF;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--gray);
+}
+
+/* =========================
+   8. SKILLS
+========================= */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill {
+    background: #123B70;
+    color: #CBE2FF;
+    padding: 12px 20px;
+    border: 1px solid #327BCB;
+    border-radius: 25px;
+    transition: .3s;
+}
+
+.skill:hover {
+    background: var(--blue);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--cyan);
+}
+
+/* =========================
+   9. CONTACT
+========================= */
+
+.contact-link {
+    color: var(--cyan);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   10. FOOTER
+========================= */
+
+footer {
+    background: #0C1425;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #233B60;
+    color: var(--gray);
+}
+
+footer span {
+    color: var(--cyan);
+}
+
+/* =========================
+   11. RESPONSIVE
+========================= */
+
+@media(max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 7%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .profile-photo {
+        width: 170px;
+        height: 170px;
+        font-size: 45px;
+    }
+
+    section {
+        padding: 55px 7%;
+    }
+}
+
+/* =========================
+   12. PRINT / SAVE PDF
+========================= */
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    nav, .btn {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        background: #102D65 !important;
+        print-color-adjust: exact;
+    }
+
+    .card {
+        break-inside: avoid;
+    }
+
+    section, footer {
+        break-inside: avoid;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="logo">FAHRI.DEV</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Profil</a></li>
+        <li><a href="#pendidikan">Pendidikan</a></li>
+        <li><a href="#organisasi">Organisasi</a></li>
+        <li><a href="#skill">Keahlian</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h3>HELLO, I'M</h3>
+
+        <h1>
+            MUHAMMAD
+            <span>FAHRI IBRIZ</span>
+        </h1>
+
+        <p>
+            IT Enthusiast | Kader IPNU |
+            Mahasantri Gen 5 PeTIK II Jombang.
+            Terus belajar, berkarya, dan
+            memberikan manfaat bagi sesama.
+        </p>
+
+        <a href="#about" class="btn">
+            Lihat Profil
+        </a>
+
+        <a href="#kontak" class="btn">
+            Hubungi Saya
+        </a>
+
+        <button onclick="window.print()" class="btn">
+            Download / Cetak CV
+        </button>
+
+    </div>
+
+    <!-- FOTO PROFIL -->
+    <!-- Ganti FI dengan foto jika sudah tersedia -->
+
+    <div class="profile-photo">
+        FI
+    </div>
+
+</header>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        ABOUT ME
+    </h2>
+
+    <div class="card">
+
+        <h3>Profil Singkat</h3>
+
+        <p>
+            Saya Muhammad Fahri Ibriz, seseorang
+            yang memiliki semangat belajar dan
+            ketertarikan dalam bidang teknologi
+            informasi.
+
+            Saya merupakan kader IPNU di PR Desa
+            Tambakrejo dan PAC IPNU Jombang Kota.
+
+            Saat ini saya menjadi Mahasantri
+            Generasi 5 di PeTIK II Jombang.
+
+            Saya senang mempelajari teknologi,
+            mengembangkan keterampilan komputer,
+            serta aktif dalam kegiatan organisasi.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="pendidikan">
+
+    <h2 class="section-title">
+        EDUCATION
+    </h2>
+
+    <div class="card">
+        <h3>01. Madrasah Mu'alimin Mu'alimat</h3>
+        <p>
+            Pendidikan selama 6 tahun
+            di Tambakberas, Jombang.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>02. MA Unggulan KH Abdul Wahab Hasbulloh</h3>
+        <p>
+            Pendidikan Madrasah Aliyah di Jombang.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>03. PeTIK II Jombang</h3>
+        <p>
+            Mahasantri Generasi 5.
+            Fokus belajar teknologi informasi
+            dan pengembangan perangkat lunak.
+        </p>
+    </div>
+
+</section>
+
+<!-- ORGANIZATION -->
+
+<section id="organisasi">
+
+    <h2 class="section-title">
+        ORGANIZATION
+    </h2>
+
+    <div class="card">
+
+        <h3>IPNU</h3>
+        <h3>Himpunan Santri Bahrul Ulum Karesidenan Jombang (Hisbu Kesaj)</h3>
+
+        <p>
+            Ikatan Pelajar Nahdlatul Ulama.
+        </p>
+
+        <p>
+            Kader PR IPNU Desa Tambakrejo.
+        </p>
+
+        <p>
+            Kader PAC IPNU Jombang Kota.
+        </p>
+        
+        <p>
+            Anggota Dokumentasi Safari Ramadhan 2025
+        </p>
+
+        <p>
+            Anggota Dokumentasi HBH 2025
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skill">
+
+    <h2 class="section-title">
+        MY SKILLS
+    </h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            Install Ulang Windows
+        </div>
+
+        <div class="skill">
+            Instalasi Software
+        </div>
+
+        <div class="skill">
+            Troubleshooting PC
+        </div>
+
+        <div class="skill">
+            Dasar HTML
+        </div>
+
+        <div class="skill">
+            Dasar CSS
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="kontak">
+
+    <h2 class="section-title">
+        CONTACT ME
+    </h2>
+
+    <div class="card">
+
+        <h3>Email</h3>
+
+        <p>
+            <a class="contact-link"
+               href="mailto:muhammdfahri445566@gmail.com">
+               muhammdfahri445566@gmail.com
+            </a>
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>WhatsApp</h3>
+
+        <p>
+            <a class="contact-link"
+               href="https://wa.me/089535826969">
+                089525826969
+            </a>
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Lokasi</h3>
+
+        <p>Jombang, Jawa Timur</p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026
+        <span>MUHAMMAD FAHRI IBRIZ</span>
+    </p>
+
+    <p>
+        Designed & Developed by Fahri
+    </p>
+
+    <p>
+        Personal Portfolio Website
+    </p>
+
+</footer>
+
+</body>
+</html>
